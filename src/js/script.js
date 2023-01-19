@@ -150,6 +150,10 @@
           // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
           const option = param.options[optionId];
 
+          // check if there is param with a name of paramId in formData and if it includes optionId
+          const optionSelected =  formData[paramId] && formData[paramId].includes(optionId); 
+
+
           //find image with class paramId.optionId
           const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
           //check if optionImage is found
@@ -157,14 +161,13 @@
           //if optionImage is found check if option is selected
             if(optionSelected) {
             //if option is selected or not, add or remove class active
-              optionImage.add(classNames.menuProduct.imageVisible);
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
             } else {
-              optionImage.remove(classNames.menuProduct.imageVisible);
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
           
-          // check if there is param with a name of paramId in formData and if it includes optionId
-          const optionSelected =  formData[paramId] && formData[paramId].includes(optionId); 
+          
           // check if the option is not default
           if (optionSelected) {
             // add option price to price variable
