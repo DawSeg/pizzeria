@@ -277,7 +277,6 @@
     }
   }
   
-
   class AmountWidget{
     constructor(element){
       const thisWidget = this;
@@ -371,10 +370,9 @@
 
     add(menuProduct){
       const thisCart = this;
-
       //generate HTML based on a template
       const generatedHTML = templates.cartProduct(menuProduct);
-      //const generatedHTML = templates.menuProduct(thisCart.data);
+      
       //create element using utils.createElementFromHTML
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
       //add element to menu
@@ -391,7 +389,7 @@
   class CartProduct {
     constructor(menuProduct, element){
       const thisCartProduct = this;
-
+      console.log('menuProduct:', menuProduct);
       thisCartProduct.id = menuProduct.id;
       thisCartProduct.name = menuProduct.name;
       thisCartProduct.amount = menuProduct.amount;
@@ -422,8 +420,9 @@
       thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget);
 
       thisCartProduct.amountWidgetElem.addEventListener('updated', function () {
-        //thisCartProduct.amount = 
-        //thisCartProduct.price =
+        thisCartProduct.amount = thisCartProduct.amountWidget.value;
+        thisCartProduct.price = thisCartProduct.amount * thisCartProduct.priceSingle;
+        thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
       });
     }
   }
