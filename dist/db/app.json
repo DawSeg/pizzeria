@@ -196,10 +196,11 @@
                    "pepper":{
                       "label":"Black pepper",
                       "price":1
-                   }
-                }
-             }
-          }
-       }
-    ]
- }
+                     }
+                  }
+               }
+            }
+         }
+      ],
+      "orders": []
+   }
