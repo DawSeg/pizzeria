@@ -422,6 +422,7 @@
       const removeProduct = thisCart.products.indexOf(event);
       console.log(removeProduct);
       const removeValue = thisCart.products.splice(removeProduct, 1);
+      console.log(removeValue);
       thisCart.update();
     }
   }
