@@ -140,18 +140,20 @@ class Product{
     });
   }
 
-  addToCart(){
+  addToCart() {
     const thisProduct = this;
 
-    //app.cart.add(thisProduct.prepareCartProduct());
+    thisProduct.name = thisProduct.data.name;
+    thisProduct.amount = thisProduct.amountWidget.value;
 
     const event = new CustomEvent('add-to-cart', {
       bubbles: true,
       detail: {
-        Product: thisProduct,
-      }
+        product: thisProduct.prepareCartProduct()
+      },
     });
-    console.log(event);
+
+    thisProduct.element.dispatchEvent(event);
   }
   
 
