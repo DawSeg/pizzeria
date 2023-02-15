@@ -19,7 +19,10 @@ class Booking{
     thisBooking.dom.wrapper.innerHTML = generatedHTML;
     thisBooking.dom.peopleAmount = element.querySelector(select.widgets.booking.peopleAmount);
     thisBooking.dom.hoursAmount = element.querySelector(select.widgets.booking.hoursAmount);
-  }
+    thisBooking.dom.datePicker = element.querySelector(select.widgets.amount.datePicker.wrapper);
+    thisBooking.dom.hourPicker = element.querySelector(select.widgets.amount.hourPicker.wrapper);
+    console.log('element:', element);
+  } 
 
   initWidgets(){
     const thisBooking = this;
@@ -32,6 +35,10 @@ class Booking{
     thisBooking.dom.hoursAmount.addEventListener('updated', function () {
 
     });
+
+    //thisBooking.hourPicker = new AmountWidget(thisBooking.dom.hourPicker);
+    //thisBooking.datePicker = new AmountWidget(thisBooking.dom.datePicker);
+    
   }
 }
 export default Booking;
