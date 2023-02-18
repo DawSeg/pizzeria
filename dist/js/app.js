@@ -2,6 +2,7 @@ import {settings, select, classNames, templates} from './settings.js';
 import Product from './components/product.js';
 import Cart from './components/cart.js';
 import Booking from './components/booking.js';
+import Home from './components/home.js';
 
 const app = {
 
@@ -14,7 +15,7 @@ const app = {
     
     let pageMatchingHash = thisApp.pages[0].id;
     for(let page of thisApp.pages){
-      if(page.id ==idFromHash){
+      if(page.id == idFromHash){
         pageMatchingHash = page.id;
         break;
       }
@@ -85,6 +86,13 @@ const app = {
     thisApp.booking = new Booking(widgetContainer);
   },
 
+  initHome: function(){
+    const thisApp =this;
+
+    const homeContainer = document.querySelector(select.containerOf.home);
+    thisApp.home = new Home(homeContainer);
+  },
+
   initData: function(){
     const thisApp = this;
 
@@ -119,6 +127,7 @@ const app = {
       
     thisApp.initCart();
     thisApp.initBooking();
+    thisApp.initHome();
   },
 
 };

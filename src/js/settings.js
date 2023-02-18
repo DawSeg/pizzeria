@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 export const select = {
   templateOf: {
+    home: '#template-home',
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product', // CODE ADDED
     bookingWidget: '#template-booking-widget',
@@ -10,6 +11,7 @@ export const select = {
     cart: '#cart',
     pages: '#pages',
     booking: '.booking-wrapper',
+    home: '#home',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -131,6 +133,7 @@ export const settings = {
 };
   
 export const templates = {
+  home: Handlebars.compile(document.querySelector(select.templateOf.home).innerHTML),
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   // CODE ADDED START
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
