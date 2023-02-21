@@ -1,4 +1,3 @@
-
 import {templates} from '../settings.js';
 
 class Home{
@@ -12,7 +11,7 @@ class Home{
     const thisHome = this;
   
     /* generate HTML based on template */
-    const generatedHTML = templates.homePage();
+    const generatedHTML = templates.home();
     thisHome.dom = {};
     thisHome.dom.wrapper = element;
     thisHome.dom.wrapper.innerHTML = generatedHTML;

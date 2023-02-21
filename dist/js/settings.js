@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 export const select = {
   templateOf: {
-    home: '#template-home-page',
+    home: '#template-home',
     menuProduct: '#template-menu-product',
     cartProduct: '#template-cart-product', // CODE ADDED
     bookingWidget: '#template-booking-widget',
@@ -31,31 +30,32 @@ export const select = {
       input: 'input.amount', // CODE CHANGED
       linkDecrease: 'a[href="#less"]',
       linkIncrease: 'a[href="#more"]',
-      datePicker: {
-        wrapper: '.date-picker',
-        input: `input[name="date"]`,
-      },
-      hourPicker: {
-        wrapper: '.hour-picker',
-        input: 'input[type="range"]',
-        output: '.output',
-      },
     },
-    booking: {
-      peopleAmount: '.people-amount',
-      hoursAmount: '.hours-amount',
-      tables: '.floor-plan .table',
+    datePicker: {
+      wrapper: '.date-picker',
+      input: `input[name="date"]`,
     },
-    nav: {
-      links: '.main-nav a',
+    hourPicker: {
+      wrapper: '.hour-picker',
+      input: 'input[type="range"]',
+      output: '.output',
     },
+  },
+  booking: {
+    peopleAmount: '.people-amount',
+    hoursAmount: '.hours-amount',
+    tables: '.floor-plan .table',
+  },
+  nav: {
+    links: '.main-nav a',
   },
   // CODE ADDED START
   cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
     totalNumber: `.cart__total-number`,
-    totalPrice: '.cart__total-price strong, .cart__order-total .cart__order-price-sum strong',
+    totalPrice:
+      '.cart__total-price strong, .cart__order-total .cart__order-price-sum strong',
     subtotalPrice: '.cart__order-subtotal .cart__order-price-sum strong',
     deliveryFee: '.cart__order-delivery .cart__order-price-sum strong',
     form: '.cart__order',
@@ -71,35 +71,39 @@ export const select = {
   },
   // CODE ADDED END
 };
-  
+
 export const classNames = {
   menuProduct: {
     wrapperActive: 'active',
     imageVisible: 'active',
-    booking: {
-      loading: 'loading',
-      tableBooked: 'booked',
-    },
-    nav: {
-      active: 'active',
-    },
-    pages: {
-      active: 'active',
-    }
   },
   // CODE ADDED START
   cart: {
     wrapperActive: 'active',
   },
   // CODE ADDED END
+  booking: {
+    loading: 'loading',
+    tableBooked: 'booked',
+  },
+  nav: {
+    active: 'active',
+  },
+  pages: {
+    active: 'active',
+  },
 };
-  
+
 export const settings = {
   amountWidget: {
     defaultValue: 1,
-    defaultMin: 1,
-    defaultMax: 9,
-  }, 
+    defaultMin: 0,
+    defaultMax: 10,
+  }, // CODE CHANGED
+  // CODE ADDED START
+  cart: {
+    defaultDeliveryFee: 20,
+  },
   hours: {
     open: 12,
     close: 24,
@@ -114,9 +118,6 @@ export const settings = {
     url: '//localhost:3131',
     products: 'products',
     orders: 'orders',
-    
-    product: 'product',
-    order: 'order',
     booking: 'booking',
     event: 'event',
     dateStartParamKey: 'date_gte',
@@ -124,20 +125,23 @@ export const settings = {
     notRepeatParam: 'repeat=false',
     repeatParam: 'repeat_ne=false',
   },
-  cart: {
-    defaultDeliveryFee: 20,
-  },
+  // CODE ADDED END
+};
 
-  
-  // CODE ADDED END
-};
-  
 export const templates = {
-  home: Handlebars.compile(document.querySelector(select.templateOf.home).innerHTML),
-  menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
+  home: Handlebars.compile(
+    document.querySelector(select.templateOf.home).innerHTML
+  ),
+
+  menuProduct: Handlebars.compile(
+    document.querySelector(select.templateOf.menuProduct).innerHTML
+  ),
   // CODE ADDED START
-  cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
+  cartProduct: Handlebars.compile(
+    document.querySelector(select.templateOf.cartProduct).innerHTML
+  ),
   // CODE ADDED END
-  bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
+  bookingWidget: Handlebars.compile(
+    document.querySelector(select.templateOf.bookingWidget).innerHTML
+  ),
 };
-/* eslint-enable no-unused-vars */
