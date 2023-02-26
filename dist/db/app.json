@@ -203,7 +203,7 @@
    "events": [
      {
        "id": 1,
-       "date": "2021-01-01",
+       "date": "2023-03-01",
        "hour": "12:30",
        "table": 1,
        "repeat": false,
@@ -255,7 +255,7 @@
    "bookings": [
      {
        "id": 1,
-       "date": "2022-12-21",
+       "date": "2023-03-04",
        "hour": "18:30",
        "table": 1,
        "duration": 3,
