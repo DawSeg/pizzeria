@@ -21,7 +21,15 @@ class Home{
     //const homeContainer = document.querySelector(select.containerOf.homePage);
     /* add element to menu */
     //homeContainer.appendChild(thisHome.element);
-  } 
+  
+    const elem = document.querySelector('.carousel');
+    const flkty = new Flickity( elem, {
+    // options
+      cellAlign: 'left',
+      contain: true
+    });
+  
+  }
 }
 
 

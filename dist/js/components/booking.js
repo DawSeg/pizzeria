@@ -199,11 +199,10 @@ class Booking {
               event.target.classList.remove(classNames.booking.tableSelected);
             } else {
               event.target.classList.add(classNames.booking.tableSelected);
+              thisBooking.selectedTable = table.getAttribute('data-table');
             } 
           }
-        } else {
-          alert('This table is already booked.');
-        } 
+        }
       }
     });
   }
