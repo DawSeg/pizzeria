@@ -197,9 +197,10 @@ class Booking {
             }
             if(event.target.classList.contains(classNames.booking.tableSelected)){
               event.target.classList.remove(classNames.booking.tableSelected);
+              thisBooking.selectedTable = null;
             } else {
               event.target.classList.add(classNames.booking.tableSelected);
-            } thisBooking.selectedTable = table.getAttribute('data-table');
+            } thisBooking.selectedTable = event.target.getAttribute('data-table');
           }
         }
       }
