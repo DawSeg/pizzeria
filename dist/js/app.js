@@ -7,6 +7,7 @@ import HomePage from './components/HomePage.js'
 const app = {
   initPages: function () {
     const thisApp = this;
+
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
     const idFromHash = window.location.hash.replace("#/", "");
@@ -35,6 +36,7 @@ const app = {
 
   activatePage: function (pageId) {
     const thisApp = this;
+
     //add class active to matching page, remove from non-matching
     for (let page of thisApp.pages) {
       page.classList.toggle(classNames.pages.active, page.id == pageId);
@@ -50,7 +52,8 @@ const app = {
   },
 
   initHome: function () {
-    //const thisApp = this;
+    // eslint-disable-next-line no-unused-vars
+    const thisApp = this;
 
     const homePage = document.querySelector(select.containerOf.home);
     new HomePage(homePage);
@@ -79,6 +82,7 @@ const app = {
 
   initCart: function () {
     const thisApp = this;
+
     const cartElem = document.querySelector(select.containerOf.cart);
     thisApp.cart = new Cart(cartElem);
     thisApp.productList = document.querySelector(select.containerOf.menu);
@@ -89,6 +93,7 @@ const app = {
 
   initData: function () {
     const thisApp = this;
+
     thisApp.data = {};
     const url = settings.db.url + "/" + settings.db.products;
     fetch(url)
@@ -105,6 +110,7 @@ const app = {
 
   init: function () {
     const thisApp = this;
+    
     thisApp.initData();
     thisApp.initCart();
     thisApp.initPages();

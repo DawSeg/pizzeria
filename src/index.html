@@ -1,106 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Pizzeria</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
-      rel="stylesheet"
-    />
-    <link
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-    <link rel="stylesheet" href="vendor/range-slider.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__wrapper">
-          <div class="logo">
-            <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
-            <h2 class="logo__subtitle">the best homemade Italian food</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Pizzeria</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,300i,700%7COswald:300,500,700&amp;subset=latin-ext"
+    rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <link rel="stylesheet" href="vendor/range-slider.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="logo">
+          <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
+          <h2 class="logo__subtitle">the best homemade Italian food</h2>
+        </div>
+        <div class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#order">Order</a>
+          <a href="#booking">Booking</a>
+        </div>
+        <div id="cart" class="cart">
+          <div class="cart__summary">
+            <span class="cart__total-number">0</span>
+            <span class="cart__total-price">Total price: $<strong>0</strong></span>
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-shopping-cart cart__icon"></i>
           </div>
-          <div class="main-nav">
-            <a href="#home">Home</a>
-            <a href="#order">Order</a>
-            <a href="#booking">Booking</a>
-          </div>
-          <div id="cart" class="cart">
-            <div class="cart__summary">
-              <span class="cart__total-number">0</span>
-              <span class="cart__total-price"
-                >Total price: $<strong>0</strong></span
-              >
-              <i class="fas fa-chevron-down"></i>
-              <i class="fas fa-shopping-cart cart__icon"></i>
-            </div>
-            <div class="cart__content">
-              <form class="cart__order">
-                <ul class="cart__order-summary no-spacing"></ul>
-                <ul class="cart__order-price">
-                  <li class="cart__order-subtotal">
-                    <span class="cart__order-price-name">Subtotal:</span>
-                    <span class="cart__order-price-sum"
-                      >$<strong>0</strong></span
-                    >
-                  </li>
-                  <li class="cart__order-delivery">
-                    <span class="cart__order-price-name">Delivery:</span>
-                    <span class="cart__order-price-sum"
-                      >$<strong>0</strong></span
-                    >
-                  </li>
-                  <li class="cart__order-total">
-                    <span class="cart__order-price-name"
-                      ><strong>Total:</strong></span
-                    >
-                    <span class="cart__order-price-sum"
-                      >$<strong>0</strong></span
-                    >
-                  </li>
-                </ul>
-                <div class="cart__order-confirmation">
-                  <input type="tel" name="phone" placeholder="Your phone" />
-                  <input
-                    type="text"
-                    name="address"
-                    placeholder="Your address"
-                  />
-                  <button type="submit" class="btn-secondary">Order</button>
-                </div>
-              </form>
-            </div>
+          <div class="cart__content">
+            <form class="cart__order">
+              <ul class="cart__order-summary no-spacing"></ul>
+              <ul class="cart__order-price">
+                <li class="cart__order-subtotal">
+                  <span class="cart__order-price-name">Subtotal:</span>
+                  <span class="cart__order-price-sum">$<strong>0</strong></span>
+                </li>
+                <li class="cart__order-delivery">
+                  <span class="cart__order-price-name">Delivery:</span>
+                  <span class="cart__order-price-sum">$<strong>0</strong></span>
+                </li>
+                <li class="cart__order-total">
+                  <span class="cart__order-price-name"><strong>Total:</strong></span>
+                  <span class="cart__order-price-sum">$<strong>0</strong></span>
+                </li>
+              </ul>
+              <div class="cart__order-confirmation">
+                <input type="tel" name="phone" placeholder="Your phone" />
+                <input type="text" name="address" placeholder="Your address" />
+                <button type="submit" class="btn-secondary">Order</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </header>
-
-    <div id="pages">
-      <section id="home">
-        <div id="home" class="home-page-wrapper container"></div>
-      </section>
-      <section id="order">
-        <div id="product-list" class="product-list container"></div>
-      </section>
-      <section id="booking">
-        <div class="booking-wrapper container"></div>
-      </section>
     </div>
+  </header>
 
-    <script id="template-cart-product" type="text/x-handlebars-template">
+  <div id="pages">
+    <section id="home">
+      <div id="home" class="home-page-wrapper container"></div>
+    </section>
+    <section id="order">
+      <div id="product-list" class="product-list container"></div>
+    </section>
+    <section id="booking">
+      <div class="booking-wrapper container"></div>
+    </section>
+  </div>
+
+  <script id="template-cart-product" type="text/x-handlebars-template">
       <li>
         <div class="widget-amount">
           <!-- widget-amount -->
@@ -133,7 +109,7 @@
       </li>
     </script>
 
-    <script id="template-menu-product" type="text/x-handlebars-template">
+  <script id="template-menu-product" type="text/x-handlebars-template">
       <article class="product"> <!-- product -->
 
           <header class="product__header">
@@ -212,7 +188,7 @@
       </article> <!-- .product -->
     </script>
 
-    <script id="template-booking-widget" type="text/x-handlebars-template">
+  <script id="template-booking-widget" type="text/x-handlebars-template">
       <div class="booking-widget">
         <h2 class="page__title no-spacing">Book a table</h2>
         <form class="booking-form">
@@ -300,121 +276,122 @@
         </form>
       </div>
     </script>
-    <script id="home-page" type="text/x-handlebars-template">
+  <script id="home-page" type="text/x-handlebars-template">
       <!--home-page-->
-      <div class="container">
-        <div class="links-top home-links">
-          <div class="link-order">
-            <a href="#order" id="order">
-              <div class="order-description">
-                <h3>ORDER ONLINE</h3>
-                <p>Delicious food delivered to your door</p>
-              </div>
-              <img src="./images/assets/pizza-1.jpg" alt="order-online" />
-            </a>
+  <div class="container">
+    <div class="links-top home-links">
+      <div class="link-order">
+        <a href="#order" id="order">
+          <div class="order-description">
+            <h3>ORDER ONLINE</h3>
+            <p>Delicious food delivered to your door</p>
           </div>
-          <div class="link-booking">
-            <a href="#booking" id="booking">
-              <div class="booking-description">
-                <h3>BOOK A TABLE</h3>
-                <p>Visit us at four diffrent locations</p>
-              </div>
-              <img src="./images/assets/pizza-2.jpg" alt="book-a-table" />
-            </a>
-          </div>
-        </div>
-        <div class="opening-hours">
-          <h3>OPENING HOURS</h3>
-          <p>TUE-SUN, 12PM-12AM</p>
-        </div>
-        <div class="main-carousel">
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="./images/assets/pizza-3.jpg" alt="pizza-3" />
-            </div>
-            <div class="carousel-text">
-              <h3>DELICIOUS FOOD</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                distinctio velit in ratione, omnis ea magni
-              </p>
-            </div>
-          </div>
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="./images/assets/pizza-3.jpg" alt="pizza-3" />
-            </div>
-            <div class="carousel-text">
-              <h3>AMAZING SERVICE!</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                distinctio velit in ratione, omnis ea magni
-              </p>
-            </div>
-          </div>
-          <div class="carousel-cell">
-            <div class="carousel-image">
-              <img src="./images/assets/pizza-3.jpg" alt="pizza-3" />
-            </div>
-            <div class="carousel-text">
-              <h3>EXCLUSIVE WINE!</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                distinctio velit in ratione, omnis ea magni
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="gallery">
-          <div class="gallery-cell">
-            <img src="./images/assets/pizza-4.jpg" alt="" />
-            <div class="gallery-icons">
-              <i class="fas fa-solid fa-heart"></i>
-              <i class="fas fa-share-alt icon"></i>
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <img src="./images/assets/pizza-5.jpg" alt="" />
-            <div class="gallery-icons">
-              <i class="fas fa-solid fa-heart"></i>
-              <i class="fas fa-share-alt icon"></i>
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <img src="./images/assets/pizza-6.jpg" alt="" />
-            <div class="gallery-icons">
-              <i class="fas fa-solid fa-heart"></i>
-              <i class="fas fa-share-alt icon"></i>
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <img src="./images/assets/pizza-7.jpg" alt="" />
-            <div class="gallery-icons">
-              <i class="fas fa-solid fa-heart"></i>
-              <i class="fas fa-share-alt icon"></i>
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <img src="./images/assets/pizza-8.jpg" alt="" />
-            <div class="gallery-icons">
-              <i class="fas fa-solid fa-heart"></i>
-              <i class="fas fa-share-alt icon"></i>
-            </div>
-          </div>
-          <div class="gallery-cell">
-            <img src="./images/assets/pizza-9.jpg" alt="" />
-            <div class="gallery-icons">
-              <i class="fas fa-solid fa-heart"></i>
-              <i class="fas fa-share-alt icon"></i>
-            </div>
-          </div>
-        </div>
-        <footer>
-          <a href="#" class="ig-link">Viev more on Instagram</a>
-        </footer>
+          <img src="./images/assets/pizza-1.jpg" alt="order-online" />
+        </a>
       </div>
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-    <script src="vendor/range-slider.min.js"></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="js/app.js" type="module"></script>
-  </body>
+      <div class="link-booking">
+        <a href="#booking" id="booking">
+          <div class="booking-description">
+            <h3>BOOK A TABLE</h3>
+            <p>Visit us at four diffrent locations</p>
+          </div>
+          <img src="./images/assets/pizza-2.jpg" alt="book-a-table" />
+        </a>
+      </div>
+    </div>
+    <div class="opening-hours">
+      <h3>OPENING HOURS</h3>
+      <p>TUE-SUN, 12PM-12AM</p>
+    </div>
+    <div class="main-carousel">
+      <div class="carousel-cell">
+        <div class="carousel-image">
+          <img src="./images/assets/pizza-3.jpg" alt="pizza-3" />
+        </div>
+        <div class="carousel-text">
+          <h3>DELICIOUS FOOD</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+            distinctio velit in ratione, omnis ea magni
+          </p>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <div class="carousel-image">
+          <img src="./images/assets/pizza-3.jpg" alt="pizza-3" />
+        </div>
+        <div class="carousel-text">
+          <h3>AMAZING SERVICE!</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+            distinctio velit in ratione, omnis ea magni
+          </p>
+        </div>
+      </div>
+      <div class="carousel-cell">
+        <div class="carousel-image">
+          <img src="./images/assets/pizza-3.jpg" alt="pizza-3" />
+        </div>
+        <div class="carousel-text">
+          <h3>EXCLUSIVE WINE!</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+            distinctio velit in ratione, omnis ea magni
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="gallery-cell">
+        <img src="./images/assets/pizza-4.jpg" alt="" />
+        <div class="gallery-icons">
+          <i class="fas fa-solid fa-heart"></i>
+          <i class="fas fa-share-alt icon"></i>
+        </div>
+      </div>
+      <div class="gallery-cell">
+        <img src="./images/assets/pizza-5.jpg" alt="" />
+        <div class="gallery-icons">
+          <i class="fas fa-solid fa-heart"></i>
+          <i class="fas fa-share-alt icon"></i>
+        </div>
+      </div>
+      <div class="gallery-cell">
+        <img src="./images/assets/pizza-6.jpg" alt="" />
+        <div class="gallery-icons">
+          <i class="fas fa-solid fa-heart"></i>
+          <i class="fas fa-share-alt icon"></i>
+        </div>
+      </div>
+      <div class="gallery-cell">
+        <img src="./images/assets/pizza-7.jpg" alt="" />
+        <div class="gallery-icons">
+          <i class="fas fa-solid fa-heart"></i>
+          <i class="fas fa-share-alt icon"></i>
+        </div>
+      </div>
+      <div class="gallery-cell">
+        <img src="./images/assets/pizza-8.jpg" alt="" />
+        <div class="gallery-icons">
+          <i class="fas fa-solid fa-heart"></i>
+          <i class="fas fa-share-alt icon"></i>
+        </div>
+      </div>
+      <div class="gallery-cell">
+        <img src="./images/assets/pizza-9.jpg" alt="" />
+        <div class="gallery-icons">
+          <i class="fas fa-solid fa-heart"></i>
+          <i class="fas fa-share-alt icon"></i>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <a href="#" class="ig-link">Viev more on Instagram</a>
+    </footer>
+  </div>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="vendor/range-slider.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="js/app.js" type="module"></script>
+</body>
+
 </html>

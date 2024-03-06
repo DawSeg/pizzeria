@@ -19,7 +19,6 @@ class Booking {
     const thisBooking = this;
 
     const generatedHTML = templates.bookingWidget();
-
     thisBooking.dom = {};
     thisBooking.dom.wrapper = element;
     thisBooking.dom.wrapper.innerHTML = generatedHTML;
@@ -66,13 +65,11 @@ class Booking {
       settings.db.dateEndParamKey +
       "=" +
       utils.dateToStr(thisBooking.datePicker.maxDate);
-
     const params = {
       booking: [startDateParam, endDateParam],
       eventsCurrent: [settings.db.notRepeatParam, startDateParam, endDateParam],
       eventsRepeat: [settings.db.repeatParam, endDateParam],
     };
-
     const urls = {
       booking:
         settings.db.url +
@@ -191,7 +188,7 @@ class Booking {
       if (!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
-
+      
       if (
         !allAvailable &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
