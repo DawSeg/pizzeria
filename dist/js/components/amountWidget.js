@@ -1,5 +1,5 @@
 import {select, settings} from '../settings.js';
-import BaseWidget from './baseWidget.js';
+import BaseWidget from './BaseWidget.js';
 
 class AmountWidget extends BaseWidget{
   constructor(element){
@@ -14,29 +14,18 @@ class AmountWidget extends BaseWidget{
   
   getElements(element){
     const thisWidget = this;
-   
+
     thisWidget.dom.wrapper = element;
     thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.amount.input);
     thisWidget.dom.linkDecrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkDecrease);
     thisWidget.dom.linkIncrease = thisWidget.dom.wrapper.querySelector(select.widgets.amount.linkIncrease);
   }
 
-  //parseValue(value){
-  //  return parseInt(value);
-  //}
-
   isValid(value){
     return !isNaN(value) &&
     settings.amountWidget.defaultMin <= value &&
         settings.amountWidget.defaultMax >= value;
   }
-
-  setValue(value){
-    const thisWidget = this;
-
-    thisWidget.value = value;
-  }
-
 
   renderValue() {
     const thisWidget = this;
@@ -51,18 +40,15 @@ class AmountWidget extends BaseWidget{
       //thisWidget.setValue(thisWidget.dom.input.value);
       thisWidget.correctValue = thisWidget.dom.input.value;
     });
-
     thisWidget.dom.linkDecrease.addEventListener('click', function (event) {
       event.preventDefault();
       thisWidget.setValue(thisWidget.correctValue - 1);
     });
-
     thisWidget.dom.linkIncrease.addEventListener('click', function (event) {
       event.preventDefault();
       thisWidget.setValue(thisWidget.correctValue + 1);
     });
   }
-
 }
 
 export default AmountWidget;
